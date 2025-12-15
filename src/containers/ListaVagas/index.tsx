@@ -1,28 +1,16 @@
 import { useState } from 'react'
 import FormVagas from '../../components/FormVagas'
-
 import Vaga from '../../components/Vaga'
+import { ContainerVagas } from './style'
 
-import styles from './ListaVagas.module.css'
-
-type Vaga = {
-  id: string
-  titulo: string
-  localizacao: string
-  nivel: string
-  modalidade: string
-  salarioMin: number
-  salarioMax: number
-  requisitos: string[]
-}
-
+// Essa é a lista que você tinha apagado
 const vagas = [
   {
     id: 1,
-    titulo: 'Desenvolvedor front-end',
-    localizacao: 'remoto',
-    nivel: 'junior',
-    modalidade: 'clt',
+    titulo: 'Desenvolvedor Front-end',
+    localizacao: 'Remoto',
+    nivel: 'Júnior',
+    modalidade: 'CLT',
     salarioMin: 3000,
     salarioMax: 4500,
     requisitos: ['HTML', 'CSS', 'JavaScript', 'jQuery']
@@ -30,62 +18,62 @@ const vagas = [
   {
     id: 2,
     titulo: 'Desenvolvedor NodeJS',
-    localizacao: 'remoto',
-    nivel: 'pleno',
-    modalidade: 'pj',
+    localizacao: 'Remoto',
+    nivel: 'Pleno',
+    modalidade: 'PJ',
     salarioMin: 5000,
     salarioMax: 6500,
-    requisitos: ['HTML', 'CSS', 'JavaScript', 'jQuery']
+    requisitos: ['HTML', 'CSS', 'JavaScript', 'Material UI']
   },
   {
     id: 3,
-    titulo: 'Desenvolvedor fullstack',
-    localizacao: 'remoto',
-    nivel: 'pleno',
-    modalidade: 'pj',
+    titulo: 'Desenvolvedor Fullstack',
+    localizacao: 'Remoto',
+    nivel: 'Pleno',
+    modalidade: 'PJ',
     salarioMin: 4000,
     salarioMax: 6000,
-    requisitos: ['HTML', 'CSS', 'JavaScript', 'jQuery']
+    requisitos: ['HTML', 'CSS', 'JavaScript', 'Material UI']
   },
   {
     id: 4,
-    titulo: 'Designer de interfaces',
-    localizacao: 'remoto',
-    nivel: 'junior',
-    modalidade: 'clt',
+    titulo: 'Designer de Interfaces',
+    localizacao: 'Remoto',
+    nivel: 'Júnior',
+    modalidade: 'CLT',
     salarioMin: 4000,
     salarioMax: 5000,
-    requisitos: ['HTML', 'CSS', 'JavaScript', 'jQuery']
+    requisitos: ['HTML', 'CSS', 'JavaScript', 'Material UI']
   },
   {
     id: 5,
-    titulo: 'Desenvolvedor front-end',
-    localizacao: 'remoto',
-    nivel: 'senior',
-    modalidade: 'clt',
+    titulo: 'Desenvolvedor Front-end',
+    localizacao: 'Remoto',
+    nivel: 'Sênior',
+    modalidade: 'CLT',
     salarioMin: 7000,
     salarioMax: 8000,
-    requisitos: ['HTML', 'CSS', 'JavaScript', 'jQuery']
+    requisitos: ['HTML', 'CSS', 'JavaScript', 'Material UI']
   },
   {
     id: 6,
-    titulo: 'Desenvolvedor front-end para projeto internacional',
-    localizacao: 'remoto',
-    nivel: 'senior',
-    modalidade: 'pj',
-    salarioMin: 12000,
-    salarioMax: 15000,
-    requisitos: ['HTML', 'CSS', 'JavaScript', 'jQuery']
+    titulo: 'Desenvolvedor Front-end para curso',
+    localizacao: 'Remoto',
+    nivel: 'Júnior',
+    modalidade: 'CLT',
+    salarioMin: 4000,
+    salarioMax: 5000,
+    requisitos: ['HTML', 'CSS', 'JavaScript', 'Material UI']
   },
   {
     id: 7,
-    titulo: 'Desenvolvedor front-end',
-    localizacao: 'São Paulo/SP',
-    nivel: 'junior',
-    modalidade: 'clt',
+    titulo: 'Desenvolvedor Front-end para curso',
+    localizacao: 'Remoto',
+    nivel: 'Júnior',
+    modalidade: 'CLT',
     salarioMin: 4000,
     salarioMax: 5000,
-    requisitos: ['HTML', 'CSS', 'JavaScript', 'jQuery']
+    requisitos: ['HTML', 'CSS', 'JavaScript', 'Material UI']
   }
 ]
 
@@ -99,7 +87,7 @@ const ListaVagas = () => {
   return (
     <div>
       <FormVagas aoPesquisar={(termo: string) => setFiltro(termo)} />
-      <ul className={styles.vagas}>
+      <ContainerVagas>
         {vagasFiltradas.map((vag) => (
           <Vaga
             key={vag.id}
@@ -112,7 +100,7 @@ const ListaVagas = () => {
             requisitos={vag.requisitos}
           />
         ))}
-      </ul>
+      </ContainerVagas>
     </div>
   )
 }
